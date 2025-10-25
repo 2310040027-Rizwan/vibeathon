@@ -11,7 +11,9 @@
     "gen:jwt": "node -e \"console.log(require('crypto').randomBytes(48).toString('hex'))\""
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.24.3",
     "@google/generative-ai": "^0.21.0",
+    "@huggingface/inference": "^2.7.0",
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
@@ -22,6 +24,7 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.6.0",
     "morgan": "^1.10.0",
+    "openai": "^4.52.7",
     "socket.io": "^4.7.5"
   },
   "devDependencies": {

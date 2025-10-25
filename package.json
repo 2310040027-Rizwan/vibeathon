@@ -1,0 +1,7 @@
+// This script tells Vercel how to build the frontend
+{
+  "scripts": {
+    "build": "cd client && npm install && npm run build",
+    "start": "cd server && npm install && node src/index.js"
+  }
+}
