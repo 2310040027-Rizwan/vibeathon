@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: smart-campus-api
+    env: node
+    plan: free
+    buildCommand: cd server && npm install
+    startCommand: node src/index.js
+    autoDeploy: true
+    envVars:
+      - key: PORT
+        value: 5000
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: CLIENT_URL
+        value: https://smart-campus-web.onrender.com
+      - key: GEMINI_API_KEY
+        sync: false
+
+  - type: static
+    name: smart-campus-web
+    buildCommand: cd client && npm install && npm run build
+    staticPublishPath: client/dist
+    envVars:
+      - key: VITE_API_BASE_URL
+        value: https://smart-campus-api.onrender.com
